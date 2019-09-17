@@ -93,6 +93,14 @@ console.log(`${ticketPriceTotal} dollars have been donated`);
 
 // Problem 1
 
+let problem1 = runners.map((run) => run.email );
+console.log("Challenge5, problem1:", problem1);
+
 // Problem 2
+let problem2 = runners.map(run => run.id);
+console.log("Challenge5, problem2: ", problem2);
 
 // Problem 3
+
+let problem3 = runners.map(run => run.last_name.toUpperCase());
+console.log("Challenge5, problem3: ", problem3);
