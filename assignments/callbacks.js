@@ -2,8 +2,8 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
 
+/*
   // GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
@@ -25,7 +25,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   // TEST 1 (inlined callback):
 
-  const test1 = firstItem(items, item => `I love my ${item}!`);
+  const test1 = firstItem(items, (item) => `I love my ${item}!`);
   console.log(test1); // "I love my Pencil!"
 
   // TEST 2 (declaring callback before hand):
@@ -36,29 +36,70 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
-*/
 
+*/
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  cb();
 }
+
+getLength(items, () =>{
+  console.log('array length:', items.length);
+});
+
+
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  cb(arr);
 }
+
+const lasty = (array) =>{console.log("last item in array:", array[array.length-1]);}
+
+last(items, lasty);
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  sum = x+ y;
+  cb(sum);
 }
+
+const addition = (sum) =>{console.log("this is the sum: " , sum);}
+
+sumNums(8,6,addition);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  yeet = x * y;
+  cb(yeet);
 }
+
+const multi = (result) =>{console.log(`this is the product: ${result}`);}
+
+multiplyNums(7,2, multi);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let found = false;
+  list.forEach((l)=>{
+    if(l == item){
+      found = true;
+    }
+  });
+
+  cb(found);
+
 }
+
+const lagrange = (pal) =>{console.log("contains function:", pal);}
+
+contains("Pencil", items, lagrange);
 
 /* STRETCH PROBLEM */
 
